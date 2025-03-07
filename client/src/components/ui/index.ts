@@ -29,6 +29,7 @@ export * from './InputOTP';
 export { default as Badge } from './Badge';
 export { default as Combobox } from './Combobox';
 export { default as Dropdown } from './Dropdown';
+export { default as SplitText } from './SplitText';
 export { default as FileUpload } from './FileUpload';
 export { default as DropdownPopup } from './DropdownPopup';
 export { default as DelayedRender } from './DelayedRender';
