@@ -1,0 +1,88 @@
+model_list:
+  - model_name: azure-gpt-3.5-turbo
+    litellm_params:
+      model: azure/gpt-35-turbo
+      api_base: https://ai-teamvizuara2137ai695073812545.cognitiveservices.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-10-21
+      api_version: "2024-10-21"
+      api_key: os.environ/AZURE_API_KEY # The `os.environ/` prefix tells litellm to read this from the env.
+  - model_name: azure-gpt-4
+    litellm_params:
+      model: azure/gpt-4
+      api_base: https://ai-teamvizuara2137ai695073812545.cognitiveservices.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-10-21
+      api_version: "2024-10-21"
+      api_key: os.environ/AZURE_API_KEY # The `os.environ/` prefix tells litellm to read this from the env.
+  - model_name: azure-gpt-4o
+    litellm_params:
+      model: azure/gpt-4o
+      api_base: https://ai-teamvizuara2137ai695073812545.cognitiveservices.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-10-21
+      api_version: "2024-10-21"
+      api_key: os.environ/AZURE_API_KEY # The `os.environ/` prefix tells litellm to read this from the env.
+  - model_name: azure-text-embedding-ada-002
+    litellm_params:
+      model: azure/text-embedding-ada-002
+      api_base: https://ai-teamvizuara2137ai695073812545.cognitiveservices.azure.com/openai/deployments/gpt-35-turbo/chat/completions?api-version=2024-10-21
+      api_version: "2024-10-21"
+      api_key: os.environ/AZURE_API_KEY # The `os.environ/` prefix tells litellm to read this from the env.
+  - model_name: gcp-gemini-1.5-pro
+    litellm_params:
+      model: vertex_ai/gemini-1.5-pro-002
+      vertex_project: "poetic-fact-452309-h7"
+      vertex_location: "us-central1"
+      vertex_credentials: os.environ/GOOGLE_APPLICATION_CREDENTIALS
+  - model_name: gcp-claude-3-5-sonnet
+    litellm_params:
+      model: vertex_ai/claude-3-5-sonnet@20240620
+      vertex_project: "poetic-fact-452309-h7"
+      vertex_location: "asia-south1"
+      vertex_credentials: os.environ/GOOGLE_APPLICATION_CREDENTIALS
+  - model_name: gcp-gemini-1.5-flash-002
+    litellm_params:
+      model: vertex_ai/gemini-1.5-flash-002
+      vertex_project: "poetic-fact-452309-h7"
+      vertex_location: "us-central1"
+      vertex_credentials: os.environ/GOOGLE_APPLICATION_CREDENTIALS
+  - model_name: gcp-gemini-2.0-flash-lite-001
+    litellm_params:
+      model: vertex_ai/gemini-2.0-flash-lite-001
+      vertex_project: "poetic-fact-452309-h7"
+      vertex_location: "us-central1"
+      vertex_credentials: os.environ/GOOGLE_APPLICATION_CREDENTIALS
+  - model_name: gcp-llama-3.3-70b-instruct-maas
+    litellm_params:
+      model: vertex_ai/meta/llama-3.3-70b-instruct-maas
+      vertex_project: "poetic-fact-452309-h7"
+      vertex_location: "us-central1"
+      vertex_credentials: os.environ/GOOGLE_APPLICATION_CREDENTIALS
+  - model_name: gcp-gemini-2.0-flash-thinking
+    litellm_params:
+      model: vertex_ai/gemini-2.0-flash-thinking-exp-01-21 
+      vertex_project: "poetic-fact-452309-h7"
+      vertex_location: "us-central1"
+      vertex_credentials: os.environ/GOOGLE_APPLICATION_CREDENTIALS
+  - model_name: bedrock-llama3-70b
+    litellm_params:
+      model: bedrock/meta.llama3-70b-instruct-v1:0
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION_NAME
+      guardrailConfig: {
+        "guardrailIdentifier": "exdeg57n5pb8", # The identifier (ID) for the guardrail.
+        "guardrailVersion": "DRAFT",           # The version of the guardrail.
+        "trace": "disabled",                   # The trace behavior for the guardrail. Can either be "disabled" or "enabled"
+      }
+  - model_name: bedrock-amazon.titan-text-express-v1
+    litellm_params:
+      model: bedrock/amazon.titan-text-express-v1
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION_NAME
+  - model_name: bedrock-mistral.mistral-large
+    litellm_params:
+      model: bedrock/mistral.mistral-large-2402-v1:0
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION_NAME
+litellm_settings:
+  success_callback: ["langfuse"]
+
+
